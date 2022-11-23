@@ -10,7 +10,7 @@ variable "workspace" {
 }
 
 resource "aws_instance" "my_vm" {
-  count         = var.workspace == "default" ? 3 : 1
+  count         = var.workspace == "prod" ? 3 : 1
   ami           = var.ami //Ubuntu AMI
   instance_type = var.instance_type
 
