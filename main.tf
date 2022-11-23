@@ -4,6 +4,11 @@ variable "name_tag" {
   default     = "EC2"
 }
 
+variable "workspace" {
+  type        = string
+  description = "workspace value"
+}
+
 resource "aws_instance" "my_vm" {
   count         = var.workspace == "default" ? 3 : 1
   ami           = var.ami //Ubuntu AMI
