@@ -10,6 +10,6 @@ resource "aws_instance" "my_vm" {
   instance_type = var.instance_type
 
   tags = {
-    Name = format("%s_%s_%s", var.name_tag, terraform.workspace, count.index)
+    Name = format("%s_%s", var.name_tag, terraform.workspace)
   }
 }
